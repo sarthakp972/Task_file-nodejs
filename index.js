@@ -39,6 +39,15 @@ fs.writeFile(`./files/${req.body.title.split(' ').join('')}.txt`,req.body.detail
 res.redirect("/")
 });
 })
+// route for read details
+app.get('/file/:filename', function(req, res) {
+    fs.readFile(`./files/${req.params.filename}`, "utf-8", function(err, filedata) {
+        if (err) {
+            return res.status(500).send("Error reading file");
+        }
+        res.render('show', { filename: req.params.filename, filedata:filedata });
+    });
+});
 // Start the server on port 3000
 app.listen(3000, function () {
     console.log('Server is running on http://localhost:3000');

@@ -21,7 +21,8 @@
                     <div class="task w-72 px-3 py-4 rounded-md bg-zinc-800">
                         <h1 class="text-white text-3xl tracking-tighter"><%= val %></h1>
                         <p class="details text-white mt-2"><%= val.details %></p>
-                        <!-- <a  class="text-blue-600 inline-block mt-2">Read more</a> -->
+                        <a href="/file/<%= val %>" class="text-blue-600 inline-block mt-2">Read more</a>
+
                     </div>
                 <% }) %>
             <% } else { %>
